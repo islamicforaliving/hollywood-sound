@@ -95,19 +95,19 @@ const features = [
 
 const reviews = [
   {
-    name: "Marcus T.",
+    name: "Rob S.",
     stars: 5,
-    text: "Hollywood Sound transformed my Civic. The sound system hits harder than anything I've ever heard. Professional crew!",
+    text: "Great place! Super quick installs too! They reinstalled my sub, amp, and double din stereo in no time.",
   },
   {
-    name: "Jasmine R.",
+    name: "Collin U.",
     stars: 5,
-    text: "Got my windows tinted here and the quality is insane. No bubbles, perfect cut. Will be back for LED lights!",
+    text: "Fast work — did all my wiring for my amp and installed a new one. Guy was fair with price, $180 cheaper than competitors!",
   },
   {
-    name: "Derek L.",
+    name: "Verified Customer",
     stars: 5,
-    text: "Remote starter install was quick and clean. They even walked me through the app. 10/10 service.",
+    text: "Very professional, and kept me updated throughout the install. They deserve a TEN star rating!",
   },
 ];
 
@@ -150,7 +150,7 @@ export default function Home() {
 
             <div className="hidden md:flex items-center gap-3">
               <a
-                href="tel:+15551234567"
+                href="tel:+17344273333"
                 className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-sm font-semibold hover:opacity-90 transition-opacity"
               >
                 <Phone className="w-4 h-4" />
@@ -189,11 +189,18 @@ export default function Home() {
               )
             )}
             <a
-              href="tel:+15551234567"
+              href="tel:+17344273333"
               className="flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-sm font-semibold mt-2"
             >
               <Phone className="w-4 h-4" />
               Call Now
+            </a>
+            <a
+              href="sms:+17344273333"
+              className="flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-white/10 border border-white/20 text-sm font-semibold mt-2"
+            >
+              <MessageSquare className="w-4 h-4" />
+              Text Us
             </a>
           </motion.div>
         )}
@@ -219,7 +226,7 @@ export default function Home() {
               <span className="text-white">Sound</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto mb-4">
-              Detroit's #1 Aftermarket Car Audio & Customization Shop
+              Garden City's Trusted Aftermarket Car Audio & Customization Shop
             </p>
             <p className="text-slate-500 mb-10">
               Speakers · Tinting · LED Lighting · Remote Starters · Custom Builds
@@ -233,14 +240,14 @@ export default function Home() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <a
-              href="tel:+15551234567"
+              href="tel:+17344273333"
               className="flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-lg font-bold hover:scale-105 transition-transform shadow-lg shadow-cyan-500/25"
             >
               <Phone className="w-5 h-5" />
-              Call (555) 123-4567
+              Call (734) 427-3333
             </a>
             <a
-              href="sms:+15551234567"
+              href="sms:+17344273333"
               className="flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 border border-white/20 text-lg font-bold hover:bg-white/20 transition-colors"
             >
               <MessageSquare className="w-5 h-5" />
@@ -404,7 +411,7 @@ export default function Home() {
               Customer <span className="text-amber-400">Reviews</span>
             </h2>
             <p className="text-slate-400 text-lg max-w-xl mx-auto">
-              Don't just take our word for it — hear from the community.
+              Rated 4.3★ with 200+ reviews. Don't just take our word for it — hear from real customers.
             </p>
           </motion.div>
 
@@ -433,6 +440,24 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <a
+              href="https://www.google.com/search?q=Hollywood+Sound+Garden+City+MI+reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 border border-white/20 text-lg font-bold hover:bg-white/20 transition-colors"
+            >
+              <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+              See All Google Reviews
+              <ChevronRight className="w-5 h-5" />
+            </a>
+          </motion.div>
         </div>
       </section>
 
@@ -465,7 +490,7 @@ export default function Home() {
                 <Phone className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-lg font-bold mb-2">Call Us</h3>
-              <p className="text-slate-400">(555) 123-4567</p>
+              <p className="text-slate-400">(734) 427-3333</p>
             </motion.a>
 
             <motion.div
@@ -480,9 +505,9 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-bold mb-2">Visit Us</h3>
               <p className="text-slate-400 text-center">
-                1234 Woodward Ave
+                30254 Ford Road
                 <br />
-                Detroit, MI 48226
+                Garden City, MI 48135
               </p>
             </motion.div>
 
@@ -498,9 +523,13 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-bold mb-2">Hours</h3>
               <p className="text-slate-400 text-center">
-                Mon–Sat: 9AM – 7PM
+                Mon, Wed-Fri: 9AM – 6:30PM
                 <br />
-                Sunday: 11AM – 5PM
+                Tue: 9:30AM – 6PM
+                <br />
+                Sat: 9AM – 5PM
+                <br />
+                Sun: Closed
               </p>
             </motion.div>
           </div>
@@ -511,13 +540,22 @@ export default function Home() {
             viewport={{ once: true }}
             className="mt-12 text-center"
           >
-            <a
-              href="tel:+15551234567"
-              className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-xl font-bold hover:scale-105 transition-transform shadow-xl shadow-cyan-500/25"
-            >
-              <Phone className="w-6 h-6" />
-              Call Now — Free Quote!
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="tel:+17344273333"
+                className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-xl font-bold hover:scale-105 transition-transform shadow-xl shadow-cyan-500/25"
+              >
+                <Phone className="w-6 h-6" />
+                Call Now — Free Quote!
+              </a>
+              <a
+                href="sms:+17344273333"
+                className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-white/10 border border-white/20 text-xl font-bold hover:bg-white/20 transition-colors"
+              >
+                <MessageSquare className="w-6 h-6" />
+                Text Us
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -544,11 +582,11 @@ export default function Home() {
             </div>
 
             <a
-              href="tel:+15551234567"
+              href="tel:+17344273333"
               className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors font-semibold"
             >
               <Phone className="w-4 h-4" />
-              (555) 123-4567
+              (734) 427-3333
             </a>
           </div>
         </div>
