@@ -213,13 +213,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
-                Hollywood
-              </span>
-              <br />
-              <span className="text-white">Sound</span>
-            </h1>
+            <img src="/logo.png" alt="Hollywood Sound" className="h-24 md:h-32 lg:h-40 w-auto mx-auto mb-6" />
             <p className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto mb-4">
               Ann Arbor's Trusted Aftermarket Car Audio & Customization Shop
             </p>
