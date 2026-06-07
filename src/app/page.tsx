@@ -213,7 +213,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <img src="/logo.png" alt="Hollywood Sound" className="h-24 md:h-32 lg:h-40 w-auto mx-auto mb-6" />
+            <img src="/logo.png" alt="Hollywood Sound" className="h-32 md:h-44 lg:h-56 w-auto mx-auto mb-6" />
             <p className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto mb-4">
               Ann Arbor's Trusted Aftermarket Car Audio & Customization Shop
             </p>
