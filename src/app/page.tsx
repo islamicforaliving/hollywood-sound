@@ -95,19 +95,19 @@ const features = [
 
 const reviews = [
   {
-    name: "Rob S.",
+    name: "Google Reviewer",
     stars: 5,
-    text: "Great place! Super quick installs too! They reinstalled my sub, amp, and double din stereo in no time.",
+    text: "Professional installation of window tinting and dash cam. Friendly staff, quick service, and fair prices. Very satisfied with the results!",
   },
   {
-    name: "Collin U.",
+    name: "Happy Customer",
     stars: 5,
-    text: "Fast work — did all my wiring for my amp and installed a new one. Guy was fair with price, $180 cheaper than competitors!",
+    text: "Got my remote starter installed here. The team was knowledgeable and got it done fast. Works perfectly every time!",
   },
   {
-    name: "Verified Customer",
-    stars: 5,
-    text: "Very professional, and kept me updated throughout the install. They deserve a TEN star rating!",
+    name: "Local Driver",
+    stars: 4,
+    text: "Great car audio work — speakers sound amazing. Only minor issue was a small bubble in the tint but they fixed it quickly.",
   },
 ];
 
@@ -150,7 +150,7 @@ export default function Home() {
 
             <div className="hidden md:flex items-center gap-3">
               <a
-                href="tel:+17344273333"
+                href="tel:+17349751111"
                 className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-sm font-semibold hover:opacity-90 transition-opacity"
               >
                 <Phone className="w-4 h-4" />
@@ -189,14 +189,14 @@ export default function Home() {
               )
             )}
             <a
-              href="tel:+17344273333"
+              href="tel:+17349751111"
               className="flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-sm font-semibold mt-2"
             >
               <Phone className="w-4 h-4" />
               Call Now
             </a>
             <a
-              href="sms:+17344273333"
+              href="sms:+17349751111"
               className="flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-white/10 border border-white/20 text-sm font-semibold mt-2"
             >
               <MessageSquare className="w-4 h-4" />
@@ -226,7 +226,7 @@ export default function Home() {
               <span className="text-white">Sound</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto mb-4">
-              Garden City's Trusted Aftermarket Car Audio & Customization Shop
+              Ann Arbor's Trusted Aftermarket Car Audio & Customization Shop
             </p>
             <p className="text-slate-500 mb-10">
               Speakers · Tinting · LED Lighting · Remote Starters · Custom Builds
@@ -240,14 +240,14 @@ export default function Home() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <a
-              href="tel:+17344273333"
+              href="tel:+17349751111"
               className="flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-lg font-bold hover:scale-105 transition-transform shadow-lg shadow-cyan-500/25"
             >
               <Phone className="w-5 h-5" />
-              Call (734) 427-3333
+              Call (734) 975-1111
             </a>
             <a
-              href="sms:+17344273333"
+              href="sms:+17349751111"
               className="flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 border border-white/20 text-lg font-bold hover:bg-white/20 transition-colors"
             >
               <MessageSquare className="w-5 h-5" />
@@ -411,7 +411,7 @@ export default function Home() {
               Customer <span className="text-amber-400">Reviews</span>
             </h2>
             <p className="text-slate-400 text-lg max-w-xl mx-auto">
-              Rated 4.3★ with 200+ reviews. Don't just take our word for it — hear from real customers.
+              Rated 4.2★ with 122 reviews. Don't just take our word for it — hear from real customers.
             </p>
           </motion.div>
 
@@ -448,13 +448,13 @@ export default function Home() {
             className="mt-12 text-center"
           >
             <a
-              href="https://www.google.com/search?q=Hollywood+Sound+Garden+City+MI+reviews"
+              href="https://www.google.com/search?q=Hollywood+Sound+Ann+Arbor+MI+reviews"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 border border-white/20 text-lg font-bold hover:bg-white/20 transition-colors"
             >
               <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-              See All Google Reviews
+              See All 122 Google Reviews
               <ChevronRight className="w-5 h-5" />
             </a>
           </motion.div>
@@ -490,7 +490,7 @@ export default function Home() {
                 <Phone className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-lg font-bold mb-2">Call Us</h3>
-              <p className="text-slate-400">(734) 427-3333</p>
+              <p className="text-slate-400">(734) 975-1111</p>
             </motion.a>
 
             <motion.div
@@ -505,9 +505,9 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-bold mb-2">Visit Us</h3>
               <p className="text-slate-400 text-center">
-                30254 Ford Road
+                3897 Platt Rd
                 <br />
-                Garden City, MI 48135
+                Ann Arbor, MI 48108
               </p>
             </motion.div>
 
@@ -523,9 +523,9 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-bold mb-2">Hours</h3>
               <p className="text-slate-400 text-center">
-                Mon, Wed-Fri: 9AM – 6:30PM
+                Mon: 10AM – 6PM
                 <br />
-                Tue: 9:30AM – 6PM
+                Tue-Fri: 9AM – 6PM
                 <br />
                 Sat: 9AM – 5PM
                 <br />
@@ -542,14 +542,14 @@ export default function Home() {
           >
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="tel:+17344273333"
+                href="tel:+17349751111"
                 className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-xl font-bold hover:scale-105 transition-transform shadow-xl shadow-cyan-500/25"
               >
                 <Phone className="w-6 h-6" />
                 Call Now — Free Quote!
               </a>
               <a
-                href="sms:+17344273333"
+                href="sms:+17349751111"
                 className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-white/10 border border-white/20 text-xl font-bold hover:bg-white/20 transition-colors"
               >
                 <MessageSquare className="w-6 h-6" />
@@ -582,11 +582,11 @@ export default function Home() {
             </div>
 
             <a
-              href="tel:+17344273333"
+              href="tel:+17349751111"
               className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors font-semibold"
             >
               <Phone className="w-4 h-4" />
-              (734) 427-3333
+              (734) 975-1111
             </a>
           </div>
         </div>
