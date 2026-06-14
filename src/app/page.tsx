@@ -21,7 +21,6 @@ import {
   ArrowUp,
   ImageIcon,
   Disc3,
-  Radio,
 } from "lucide-react";
 
 /* ─────────────── DATA ─────────────── */
@@ -285,9 +284,10 @@ export default function Home() {
           <img
             src="/images/DSC07335.JPG"
             alt="Hollywood Sound shop interior"
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-25"
+            style={{ objectPosition: 'center 30%' }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/70 to-slate-950" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/80 to-slate-950" />
         </div>
 
         <div className="relative max-w-7xl mx-auto text-center">
@@ -374,15 +374,16 @@ export default function Home() {
                 className="group relative rounded-2xl bg-slate-900/50 border border-white/5 hover:border-white/10 transition-all hover:-translate-y-1 overflow-hidden"
               >
                 {/* Service image */}
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <LazyImage
+                <div className="relative aspect-[16/10] overflow-hidden bg-slate-800">
+                  <img
                     src={service.image}
                     alt={`${service.title} service at Hollywood Sound`}
-                    className="absolute inset-0"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />
                   <div
-                    className={`absolute top-4 left-4 w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}
+                    className={`absolute top-4 left-4 w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg backdrop-blur-sm`}
                   >
                     <service.icon className="w-6 h-6 text-white" />
                   </div>
@@ -444,14 +445,18 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group relative aspect-[3/2] rounded-xl overflow-hidden bg-slate-800"
+                className="group relative aspect-[3/2] rounded-xl overflow-hidden bg-slate-800 border border-white/5"
               >
-                <LazyImage
+                <img
                   src={img.src}
                   alt={img.alt}
-                  className="absolute inset-0"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <p className="text-sm font-medium text-white">{img.alt}</p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -505,11 +510,12 @@ export default function Home() {
               className="relative"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-3xl blur-2xl" />
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-slate-800">
-                <LazyImage
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-slate-800 shadow-2xl">
+                <img
                   src="/images/unnamed (2).webp"
                   alt="Teal Chevrolet Corvette custom build at Hollywood Sound Ann Arbor"
-                  className="w-full aspect-[4/3]"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </motion.div>
