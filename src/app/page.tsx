@@ -17,9 +17,6 @@ import {
   CheckCircle,
   Menu,
   X,
-  Shield,
-  Award,
-  Zap,
   Calendar,
   ArrowUp,
   ImageIcon,
@@ -98,10 +95,10 @@ const galleryImages = [
 ];
 
 const features = [
-  { text: "20+ Years of Experience", icon: Award },
-  { text: "Lifetime Warranty on Labor", icon: Shield },
-  { text: "MECP Certified Installers", icon: CheckCircle },
-  { text: "Same-Day Service Available", icon: Zap },
+  { text: "20+ Years of Experience", icon: Star },
+  { text: "Lifetime Warranty on Labor", icon: CheckCircle },
+  { text: "Certified Installers", icon: CheckCircle },
+  { text: "Same-Day Service Available", icon: Star },
   { text: "Top Brands Only", icon: Star },
   { text: "Free Consultations", icon: Calendar },
 ];
@@ -360,26 +357,7 @@ export default function Home() {
             </a>
           </motion.div>
 
-          {/* Quick trust row */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500"
-          >
-            <span className="flex items-center gap-1.5">
-              <Shield className="w-4 h-4 text-cyan-400" />
-              Lifetime Warranty
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Award className="w-4 h-4 text-purple-400" />
-              MECP Certified
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Zap className="w-4 h-4 text-amber-400" />
-              Same-Day Service
-            </span>
-          </motion.div>
+
         </div>
       </section>
 
