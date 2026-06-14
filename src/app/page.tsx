@@ -48,7 +48,7 @@ const services = [
     description:
       "Interior ambient lighting, underglow, headlight upgrades, and custom LED installs.",
     color: "from-amber-400 to-orange-600",
-    image: "/images/led-lights.svg",
+    image: "/images/car-dashboard.jpg",
   },
   {
     icon: Key,
@@ -56,7 +56,7 @@ const services = [
     description:
       "Start your car from anywhere. Smartphone integration, keyless entry, and security systems.",
     color: "from-emerald-400 to-green-600",
-    image: "/images/remote-start.svg",
+    image: "/images/car-night-2.jpg",
   },
   {
     icon: Disc3,
@@ -64,7 +64,7 @@ const services = [
     description:
       "Apple CarPlay, Android Auto, touchscreen head units, DVD/CD players, and backup cameras.",
     color: "from-sky-400 to-indigo-600",
-    image: "/images/carplay-dvd.svg",
+    image: "/images/car-luxury.jpg",
   },
   {
     icon: Wrench,
@@ -284,10 +284,13 @@ export default function Home() {
           <img
             src="/images/DSC07335.JPG"
             alt="Hollywood Sound shop interior"
-            className="w-full h-full object-cover opacity-25"
+            className="w-full h-full object-cover opacity-60"
             style={{ objectPosition: 'center 30%' }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/80 to-slate-950" />
+          {/* Corner glows instead of full overlay */}
+          <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-slate-950/80 to-transparent" />
+          <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-slate-950/80 to-transparent" />
+          <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-slate-950 to-transparent" />
         </div>
 
         <div className="relative max-w-7xl mx-auto text-center">
@@ -453,10 +456,7 @@ export default function Home() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-sm font-medium text-white">{img.alt}</p>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </motion.div>
             ))}
           </div>
@@ -730,7 +730,7 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="fixed bottom-24 md:bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/25 hover:scale-110 transition-transform"
+            className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/25 hover:scale-110 transition-transform"
             aria-label="Scroll to top"
           >
             <ArrowUp className="w-5 h-5 text-white" />
@@ -738,23 +738,6 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* ── Mobile Sticky CTA ── */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-md border-t border-white/10 px-4 py-3 flex gap-3">
-        <a
-          href="tel:+17349751111"
-          className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-sm font-bold"
-        >
-          <Phone className="w-4 h-4" />
-          Call
-        </a>
-        <a
-          href="sms:+17349751111"
-          className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-white/10 border border-white/20 text-sm font-bold"
-        >
-          <MessageSquare className="w-4 h-4" />
-          Text
-        </a>
-      </div>
     </main>
   );
 }
