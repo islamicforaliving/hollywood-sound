@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1" fill="#ffffff" opacity="0.05"/>
+    </pattern>
+  </defs>
+  
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <rect width="600" height="400" fill="url(#grid)"/>
+  
+  <!-- Glow behind key -->
+  <circle cx="300" cy="170" r="120" fill="url(#glow)"/>
+  
+  <!-- Signal waves -->
+  <path d="M220 170 Q180 170 180 130 Q180 90 220 90" stroke="#34d399" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M210 170 Q175 170 175 135 Q175 100 210 100" stroke="#34d399" stroke-width="2" fill="none" opacity="0.3"/>
+  <path d="M380 170 Q420 170 420 130 Q420 90 380 90" stroke="#34d399" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M390 170 Q425 170 425 135 Q425 100 390 100" stroke="#34d399" stroke-width="2" fill="none" opacity="0.3"/>
+  
+  <!-- Car silhouette -->
+  <path d="M240 280 L240 260 Q240 250 250 250 L280 250 L290 235 L350 235 L360 250 L390 250 Q400 250 400 260 L400 280 L390 280 L390 290 L370 290 L370 280 L270 280 L270 290 L250 290 L250 280 Z" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+  <circle cx="265" cy="290" r="12" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+  <circle cx="375" cy="290" r="12" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+  
+  <!-- Key fob -->
+  <rect x="270" y="120" width="60" height="100" rx="12" fill="url(#accent)" opacity="0.9"/>
+  <rect x="280" y="135" width="40" height="25" rx="4" fill="#ffffff" opacity="0.9"/>
+  <circle cx="300" cy="185" r="8" fill="#ffffff" opacity="0.9"/>
+  <circle cx="300" cy="210" r="6" fill="#ffffff" opacity="0.6"/>
+  
+  <!-- Signal from key to car -->
+  <path d="M300 220 L300 240" stroke="#34d399" stroke-width="3" stroke-dasharray="8 4" opacity="0.8"/>
+  
+  <!-- Text -->
+  <text x="300" y="340" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="900" fill="#ffffff" letter-spacing="2">REMOTE START</text>
+  <text x="300" y="370" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94a3b8">Start Your Car From Anywhere</text>
+</svg>

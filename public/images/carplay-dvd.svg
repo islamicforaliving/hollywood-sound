@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1" fill="#ffffff" opacity="0.05"/>
+    </pattern>
+  </defs>
+  
+  <rect width="600" height="400" fill="url(#bg2)"/>
+  <rect width="600" height="400" fill="url(#grid2)"/>
+  
+  <!-- Glow -->
+  <circle cx="300" cy="180" r="130" fill="url(#glow2)"/>
+  
+  <!-- Head unit / screen -->
+  <rect x="200" y="110" width="200" height="130" rx="16" fill="#1e293b" stroke="url(#accent2)" stroke-width="3"/>
+  <rect x="210" y="120" width="180" height="100" rx="8" fill="#0f172a"/>
+  
+  <!-- Screen content -->
+  <rect x="220" y="130" width="80" height="50" rx="6" fill="url(#accent2)" opacity="0.8"/>
+  <text x="260" y="160" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">CP</text>
+  
+  <rect x="310" y="130" width="70" height="50" rx="6" fill="#1e293b" stroke="#22d3ee" stroke-width="1" opacity="0.6"/>
+  <circle cx="345" cy="155" r="12" fill="none" stroke="#22d3ee" stroke-width="2" opacity="0.8"/>
+  <polygon points="341,149 341,161 351,155" fill="#22d3ee" opacity="0.8"/>
+  
+  <!-- Bottom buttons -->
+  <circle cx="250" cy="215" r="6" fill="#334155"/>
+  <circle cx="275" cy="215" r="6" fill="#334155"/>
+  <circle cx="300" cy="215" r="6" fill="#334155"/>
+  <circle cx="325" cy="215" r="6" fill="#334155"/>
+  <circle cx="350" cy="215" r="6" fill="#334155"/>
+  
+  <!-- Disc slot -->
+  <rect x="230" y="230" width="140" height="4" rx="2" fill="#334155"/>
+  
+  <!-- Text -->
+  <text x="300" y="340" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="900" fill="#ffffff" letter-spacing="2">CARPLAY &amp; DVD</text>
+  <text x="300" y="370" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#94a3b8">Apple CarPlay · Android Auto · DVD/CD</text>
+</svg>

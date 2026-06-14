@@ -20,6 +20,8 @@ import {
   Calendar,
   ArrowUp,
   ImageIcon,
+  Disc3,
+  Radio,
 } from "lucide-react";
 
 /* ─────────────── DATA ─────────────── */
@@ -31,7 +33,7 @@ const services = [
     description:
       "Premium speakers, subwoofers, amplifiers, and full sound system upgrades tailored to your ride.",
     color: "from-cyan-400 to-blue-600",
-    brands: "JL Audio, Kicker, Rockford Fosgate, Pioneer",
+    image: "/images/unnamed.webp",
   },
   {
     icon: Sun,
@@ -39,7 +41,7 @@ const services = [
     description:
       "High-quality ceramic and carbon tints for UV protection, privacy, and a sleek look.",
     color: "from-purple-400 to-fuchsia-600",
-    brands: "3M, Llumar, SunTek",
+    image: "/images/unnamed (7).webp",
   },
   {
     icon: Lightbulb,
@@ -47,7 +49,7 @@ const services = [
     description:
       "Interior ambient lighting, underglow, headlight upgrades, and custom LED installs.",
     color: "from-amber-400 to-orange-600",
-    brands: "Oracle, XK Glow, Diode Dynamics",
+    image: "/images/led-lights.svg",
   },
   {
     icon: Key,
@@ -55,7 +57,15 @@ const services = [
     description:
       "Start your car from anywhere. Smartphone integration, keyless entry, and security systems.",
     color: "from-emerald-400 to-green-600",
-    brands: "Compustar, Viper, DroneMobile",
+    image: "/images/remote-start.svg",
+  },
+  {
+    icon: Disc3,
+    title: "CarPlay & DVD",
+    description:
+      "Apple CarPlay, Android Auto, touchscreen head units, DVD/CD players, and backup cameras.",
+    color: "from-sky-400 to-indigo-600",
+    image: "/images/carplay-dvd.svg",
   },
   {
     icon: Wrench,
@@ -63,35 +73,17 @@ const services = [
     description:
       "Full custom builds — from show cars to daily drivers. We bring your vision to life.",
     color: "from-rose-400 to-red-600",
-    brands: "Fully Custom",
+    image: "/images/unnamed (1).webp",
   },
 ];
 
 const galleryImages = [
-  {
-    src: "https://images.unsplash.com/photo-1542362567-b07e54358753?w=600&h=400&fit=crop",
-    alt: "Custom car audio install with premium speakers and subwoofers",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=400&fit=crop",
-    alt: "Car interior with premium sound system and custom lighting",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&h=400&fit=crop",
-    alt: "Sport car with professional ceramic window tinting",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&h=400&fit=crop",
-    alt: "High-end car stereo head unit installation",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&h=400&fit=crop",
-    alt: "Car with custom LED underglow lighting",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=600&h=400&fit=crop",
-    alt: "Car audio subwoofer setup in custom enclosure",
-  },
+  { src: "/images/unnamed (2).webp", alt: "Teal Chevrolet Corvette custom build at Hollywood Sound" },
+  { src: "/images/unnamed (4).webp", alt: "Black McLaren supercar at Hollywood Sound Ann Arbor" },
+  { src: "/images/unnamed (5).webp", alt: "Can-Am Spyder trike custom audio installation" },
+  { src: "/images/unnamed (6).webp", alt: "Blue Chevrolet Corvette at Hollywood Sound shop" },
+  { src: "/images/unnamed (8).webp", alt: "BOSS audio amplifier professional installation" },
+  { src: "/images/unnamed (9).webp", alt: "White Ford Mustang custom audio and lighting" },
 ];
 
 const features = [
@@ -125,16 +117,9 @@ const reviews = [
 ];
 
 const brands = [
-  "JL Audio",
-  "Kicker",
-  "Rockford Fosgate",
-  "Pioneer",
-  "3M",
-  "Llumar",
-  "Compustar",
-  "Viper",
-  "Oracle",
-  "Diode Dynamics",
+  "JL Audio", "Kicker", "Rockford Fosgate", "Pioneer",
+  "3M", "Llumar", "Compustar", "Viper",
+  "Oracle", "Diode Dynamics",
 ];
 
 /* ─────────────── COMPONENTS ─────────────── */
@@ -178,7 +163,6 @@ function LazyImage({
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [activeService, setActiveService] = useState<number | null>(null);
 
   const scrollTo = (id: string) => {
     setMobileMenuOpen(false);
@@ -296,9 +280,15 @@ export default function Home() {
 
       {/* ── Hero ── */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-slate-950 to-cyan-900/20" />
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl" />
+        {/* Shop interior background */}
+        <div className="absolute inset-0">
+          <img
+            src="/images/DSC07335.JPG"
+            alt="Hollywood Sound shop interior"
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/70 to-slate-950" />
+        </div>
 
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
@@ -306,7 +296,6 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            {/* Trust badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -320,18 +309,16 @@ export default function Home() {
             <img
               src="/logo.png"
               alt="Hollywood Sound - Ann Arbor's Premier Car Audio Shop"
-              className="h-32 md:h-44 lg:h-56 w-auto mx-auto mb-6"
+              className="h-32 md:h-44 lg:h-56 w-auto mx-auto mb-6 drop-shadow-2xl"
             />
             <h1 className="sr-only">
-              Hollywood Sound — Car Audio, Tinting & Customization in Ann
-              Arbor, MI
+              Hollywood Sound — Car Audio, Tinting & Customization in Ann Arbor, MI
             </h1>
-            <p className="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto mb-4">
+            <p className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto mb-4">
               Ann Arbor's Trusted Aftermarket Car Audio & Customization Shop
             </p>
-            <p className="text-slate-500 mb-10">
-              Speakers · Tinting · LED Lighting · Remote Starters · Custom
-              Builds
+            <p className="text-slate-400 mb-10">
+              Speakers · Tinting · LED Lighting · Remote Starters · Custom Builds
             </p>
           </motion.div>
 
@@ -356,8 +343,6 @@ export default function Home() {
               Text Us
             </a>
           </motion.div>
-
-
         </div>
       </section>
 
@@ -386,31 +371,29 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                onMouseEnter={() => setActiveService(i)}
-                onMouseLeave={() => setActiveService(null)}
-                className="group relative p-8 rounded-2xl bg-slate-900/50 border border-white/5 hover:border-white/10 transition-all hover:-translate-y-1 cursor-default"
+                className="group relative rounded-2xl bg-slate-900/50 border border-white/5 hover:border-white/10 transition-all hover:-translate-y-1 overflow-hidden"
               >
-                <div
-                  className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
-                >
-                  <service.icon className="w-7 h-7 text-white" />
+                {/* Service image */}
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <LazyImage
+                    src={service.image}
+                    alt={`${service.title} service at Hollywood Sound`}
+                    className="absolute inset-0"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
+                  <div
+                    className={`absolute top-4 left-4 w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}
+                  >
+                    <service.icon className="w-6 h-6 text-white" />
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-slate-400 leading-relaxed mb-4">
-                  {service.description}
-                </p>
-                <AnimatePresence>
-                  {activeService === i && (
-                    <motion.p
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="text-xs text-slate-500 border-t border-white/5 pt-3"
-                    >
-                      Brands: {service.brands}
-                    </motion.p>
-                  )}
-                </AnimatePresence>
+
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                  <p className="text-slate-400 leading-relaxed text-sm">
+                    {service.description}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -472,18 +455,6 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mt-10 text-center"
-          >
-            <p className="text-sm text-slate-500">
-              📸 Photos coming soon — check back for real installs from our Ann
-              Arbor shop!
-            </p>
-          </motion.div>
         </div>
       </section>
 
@@ -536,8 +507,8 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-3xl blur-2xl" />
               <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-slate-800">
                 <LazyImage
-                  src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&h=600&fit=crop"
-                  alt="Professional custom car audio installation at Hollywood Sound Ann Arbor"
+                  src="/images/unnamed (2).webp"
+                  alt="Teal Chevrolet Corvette custom build at Hollywood Sound Ann Arbor"
                   className="w-full aspect-[4/3]"
                 />
               </div>
@@ -753,7 +724,7 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/25 hover:scale-110 transition-transform"
+            className="fixed bottom-24 md:bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/25 hover:scale-110 transition-transform"
             aria-label="Scroll to top"
           >
             <ArrowUp className="w-5 h-5 text-white" />
