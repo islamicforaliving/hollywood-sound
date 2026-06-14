@@ -317,10 +317,10 @@ export default function Home() {
             <h1 className="sr-only">
               Hollywood Sound — Car Audio, Tinting & Customization in Ann Arbor, MI
             </h1>
-            <p className="text-xl md:text-3xl text-slate-300 max-w-4xl mx-auto mb-4 px-4">
+            <p className="text-xl md:text-3xl text-white max-w-4xl mx-auto mb-4 px-4">
               Ann Arbor's Trusted Aftermarket Car Audio & Customization Shop
             </p>
-            <p className="text-slate-400 mb-10 text-lg md:text-xl px-4">
+            <p className="text-white/90 mb-10 text-lg md:text-xl px-4">
               Speakers · Tinting · LED Lighting · Remote Starters · Custom Builds
             </p>
           </motion.div>
