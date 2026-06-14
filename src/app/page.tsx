@@ -191,7 +191,7 @@ export default function Home() {
               }}
             >
               <img
-                src="/logo.png?v=2"
+                src="/logo.png?v=3"
                 alt="Hollywood Sound Logo"
                 className="h-16 w-auto"
               />
@@ -310,17 +310,17 @@ export default function Home() {
             </motion.div>
 
             <img
-              src="/logo.png?v=2"
+              src="/logo.png?v=3"
               alt="Hollywood Sound - Ann Arbor's Premier Car Audio Shop"
               className="h-48 md:h-60 lg:h-72 w-auto mx-auto mb-6 drop-shadow-2xl"
             />
             <h1 className="sr-only">
               Hollywood Sound — Car Audio, Tinting & Customization in Ann Arbor, MI
             </h1>
-            <p className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto mb-4">
+            <p className="text-xl md:text-3xl text-slate-300 max-w-4xl mx-auto mb-4 px-4">
               Ann Arbor's Trusted Aftermarket Car Audio & Customization Shop
             </p>
-            <p className="text-slate-400 mb-10">
+            <p className="text-slate-400 mb-10 text-lg md:text-xl px-4">
               Speakers · Tinting · LED Lighting · Remote Starters · Custom Builds
             </p>
           </motion.div>
@@ -697,7 +697,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
               <img
-                src="/logo.png?v=2"
+                src="/logo.png?v=3"
                 alt="Hollywood Sound"
                 className="h-12 w-auto"
               />
