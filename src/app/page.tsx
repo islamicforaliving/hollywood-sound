@@ -56,7 +56,7 @@ const services = [
     description:
       "Start your car from anywhere. Smartphone integration, keyless entry, and security systems.",
     color: "from-emerald-400 to-green-600",
-    image: "/images/car-night-2.jpg",
+    image: "/images/Q9-2-Way-Remote-Start-1.5.webp",
   },
   {
     icon: Disc3,
@@ -64,7 +64,7 @@ const services = [
     description:
       "Apple CarPlay, Android Auto, touchscreen head units, DVD/CD players, and backup cameras.",
     color: "from-sky-400 to-indigo-600",
-    image: "/images/car-luxury.jpg",
+    image: "/images/apple-carplay.avif",
   },
   {
     icon: Wrench,
@@ -290,7 +290,7 @@ export default function Home() {
           {/* Corner glows instead of full overlay */}
           <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-slate-950/80 to-transparent" />
           <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-slate-950/80 to-transparent" />
-          <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-slate-950 to-transparent" />
+          <div className="absolute bottom-0 left-0 w-full h-1/5 bg-gradient-to-t from-slate-950 to-transparent" />
         </div>
 
         <div className="relative max-w-7xl mx-auto text-center">
