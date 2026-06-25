@@ -193,7 +193,7 @@ export default function Home() {
               }}
             >
               <img
-                src="/logo.png?v=3"
+                src="/logo.svg"
                 alt="Hollywood Sound Logo"
                 className="h-16 w-auto"
               />
@@ -305,14 +305,14 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-slate-300 mb-6"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-950/90 border border-cyan-500/40 text-sm text-white font-bold mb-6 backdrop-blur-md shadow-lg shadow-cyan-500/20"
             >
               <Navigation className="w-4 h-4 text-cyan-400" />
               3897 Platt Rd, Ann Arbor, MI 48108
             </motion.div>
 
             <img
-              src="/logo.png?v=3"
+              src="/logo.svg"
               alt="Hollywood Sound - Ann Arbor's Premier Car Audio Shop"
               className="h-48 md:h-60 lg:h-72 w-auto mx-auto mb-6 drop-shadow-2xl"
             />
@@ -719,7 +719,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
               <img
-                src="/logo.png?v=3"
+                src="/logo.svg"
                 alt="Hollywood Sound"
                 className="h-12 w-auto"
               />
