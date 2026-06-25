@@ -39,7 +39,7 @@ const services = [
     icon: Sun,
     title: "Window Tinting",
     description:
-      "High-quality ceramic and carbon tints for UV protection, privacy, and a sleek look. We carry top brands like 3M and Llumar with lifetime warranties. Stay cool in the summer and protect your interior from fading.",
+      "High-quality ceramic and carbon tints for UV protection, privacy, and a sleek look. Stay cool in the summer and protect your interior from fading.",
     color: "from-purple-400 to-fuchsia-600",
     image: "/images/unnamed (7).webp",
   },
