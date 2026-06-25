@@ -57,7 +57,7 @@ const services = [
     description:
       "Start your car from anywhere. Smartphone integration, keyless entry, and security systems.",
     color: "from-emerald-400 to-green-600",
-    image: "https://images.unsplash.com/photo-1548266652-99cf27701ced?w=800&q=80",
+    image: "/images/remote-starter-snow.jpg",
   },
   {
     icon: Disc3,
