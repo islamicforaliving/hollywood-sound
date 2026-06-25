@@ -21,6 +21,7 @@ import {
   ArrowUp,
   ImageIcon,
   Disc3,
+  Navigation,
 } from "lucide-react";
 
 /* ─────────────── DATA ─────────────── */
@@ -56,13 +57,13 @@ const services = [
     description:
       "Start your car from anywhere. Smartphone integration, keyless entry, and security systems.",
     color: "from-emerald-400 to-green-600",
-    image: "/images/Q9-2-Way-Remote-Start-1.5.webp",
+    image: "https://images.unsplash.com/photo-1548266652-99cf27701ced?w=800&q=80",
   },
   {
     icon: Disc3,
-    title: "CarPlay & DVD",
+    title: "Apple CarPlay & Android Auto",
     description:
-      "Apple CarPlay, Android Auto, touchscreen head units, DVD/CD players, and backup cameras.",
+      "Apple CarPlay, Android Auto, touchscreen head units, and backup cameras.",
     color: "from-sky-400 to-indigo-600",
     image: "/images/apple-carplay.avif",
   },
@@ -77,20 +78,20 @@ const services = [
 ];
 
 const galleryImages = [
+  { src: "/images/unnamed (5).webp", alt: "Can-Am Spyder trike custom audio installation at Hollywood Sound" },
   { src: "/images/unnamed (2).webp", alt: "Teal Chevrolet Corvette custom build at Hollywood Sound" },
   { src: "/images/unnamed (4).webp", alt: "Black McLaren supercar at Hollywood Sound Ann Arbor" },
-  { src: "/images/unnamed (5).webp", alt: "Can-Am Spyder trike custom audio installation" },
   { src: "/images/unnamed (6).webp", alt: "Blue Chevrolet Corvette at Hollywood Sound shop" },
   { src: "/images/unnamed (8).webp", alt: "BOSS audio amplifier professional installation" },
   { src: "/images/unnamed (9).webp", alt: "White Ford Mustang custom audio and lighting" },
 ];
 
 const features = [
-  { text: "20+ Years of Experience", icon: Star },
+  { text: "20+ Years of Experience", icon: CheckCircle },
   { text: "Lifetime Warranty on Labor", icon: CheckCircle },
   { text: "Certified Installers", icon: CheckCircle },
-  { text: "Same-Day Service Available", icon: Star },
-  { text: "Top Brands Only", icon: Star },
+  { text: "Same-Day Service Available", icon: CheckCircle },
+  { text: "Top Brands & Budget Options", icon: CheckCircle },
   { text: "Free Consultations", icon: Calendar },
 ];
 
@@ -116,9 +117,10 @@ const reviews = [
 ];
 
 const brands = [
-  "JL Audio", "Kicker", "Rockford Fosgate", "Pioneer",
-  "3M", "Llumar", "Compustar", "Viper",
-  "Oracle", "Diode Dynamics",
+  "JVC", "Kicker", "Pioneer", "JL Audio",
+  "Rockford Fosgate", "Sony", "Kenwood", "Alpine",
+  "JBL", "BOSS", "3M", "Llumar",
+  "Compustar", "Viper", "Oracle", "Diode Dynamics",
 ];
 
 /* ─────────────── COMPONENTS ─────────────── */
@@ -266,7 +268,7 @@ export default function Home() {
                 Call Now
               </a>
               <a
-                href="sms:+17349751111"
+                href="sms:+17346868500"
                 className="flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-white/10 border border-white/20 text-sm font-semibold mt-2"
               >
                 <MessageSquare className="w-4 h-4" />
@@ -287,10 +289,10 @@ export default function Home() {
             className="w-full h-full object-cover opacity-60"
             style={{ objectPosition: 'center 30%' }}
           />
-          {/* Corner glows instead of full overlay */}
-          <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-slate-950/80 to-transparent" />
-          <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-slate-950/80 to-transparent" />
-          <div className="absolute bottom-0 left-0 w-full h-1/5 bg-gradient-to-t from-slate-950 to-transparent" />
+          {/* Subtle corner accents */}
+          <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-slate-950/60 to-transparent" />
+          <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-bl from-slate-950/60 to-transparent" />
+          <div className="absolute bottom-0 left-0 w-full h-1/6 bg-gradient-to-t from-slate-950 to-transparent" />
         </div>
 
         <div className="relative max-w-7xl mx-auto text-center">
@@ -305,8 +307,8 @@ export default function Home() {
               transition={{ delay: 0.1 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-slate-300 mb-6"
             >
-              <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-              Rated 4.2★ with 122+ Google Reviews
+              <Navigation className="w-4 h-4 text-cyan-400" />
+              3897 Platt Rd, Ann Arbor, MI 48108
             </motion.div>
 
             <img
@@ -339,7 +341,7 @@ export default function Home() {
               Call (734) 975-1111
             </a>
             <a
-              href="sms:+17349751111"
+              href="sms:+17346868500"
               className="flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 border border-white/20 text-lg font-bold hover:bg-white/20 transition-colors"
             >
               <MessageSquare className="w-5 h-5" />
@@ -384,9 +386,9 @@ export default function Home() {
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
                   <div
-                    className={`absolute top-4 left-4 w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg backdrop-blur-sm`}
+                    className={`absolute top-4 left-4 w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}
                   >
                     <service.icon className="w-6 h-6 text-white" />
                   </div>
@@ -404,17 +406,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Location Banner ── */}
+      <section className="py-8 px-4 bg-gradient-to-r from-cyan-600/20 via-blue-600/20 to-purple-600/20 border-y border-white/10">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-center"
+          >
+            <div className="flex items-center gap-2 text-lg font-bold text-white">
+              <Navigation className="w-5 h-5 text-cyan-400" />
+              3897 Platt Rd, Ann Arbor, MI 48108
+            </div>
+            <div className="hidden md:block w-px h-6 bg-white/20" />
+            <div className="flex items-center gap-2 text-slate-300">
+              <Clock className="w-4 h-4 text-amber-400" />
+              Mon 10-6, Tue-Fri 9-6, Sat 9-5
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── Brands Bar ── */}
       <section className="py-12 px-4 bg-slate-900/30 border-y border-white/5">
         <div className="max-w-7xl mx-auto">
-          <p className="text-center text-sm text-slate-500 mb-6 uppercase tracking-wider font-medium">
+          <p className="text-center text-sm text-slate-400 mb-6 uppercase tracking-wider font-medium">
             Trusted Brands We Install
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
             {brands.map((brand) => (
               <span
                 key={brand}
-                className="text-slate-400 font-semibold text-sm hover:text-white transition-colors"
+                className="text-white font-bold text-sm hover:text-cyan-400 transition-colors"
               >
                 {brand}
               </span>
@@ -456,7 +480,7 @@ export default function Home() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </motion.div>
             ))}
           </div>
@@ -509,7 +533,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-3xl blur-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 rounded-3xl blur-2xl" />
               <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-slate-800 shadow-2xl">
                 <img
                   src="/images/unnamed (2).webp"
@@ -536,8 +560,7 @@ export default function Home() {
               Customer <span className="text-amber-400">Reviews</span>
             </h2>
             <p className="text-slate-400 text-lg max-w-xl mx-auto">
-              Rated 4.2★ with 122 reviews. Don't just take our word for it —
-              hear from real customers.
+              Don't just take our word for it — hear from real customers.
             </p>
           </motion.div>
 
@@ -552,12 +575,7 @@ export default function Home() {
                 className="p-8 rounded-2xl bg-slate-900/50 border border-white/5 hover:border-white/10 transition-colors"
               >
                 <div className="flex gap-1 mb-4">
-                  {Array.from({ length: review.stars }).map((_, j) => (
-                    <Star
-                      key={j}
-                      className="w-5 h-5 fill-amber-400 text-amber-400"
-                    />
-                  ))}
+                  <CheckCircle className="w-5 h-5 text-emerald-400" />
                 </div>
                 <p className="text-slate-300 mb-6 leading-relaxed">
                   "{review.text}"
@@ -584,8 +602,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 border border-white/20 text-lg font-bold hover:bg-white/20 transition-colors"
             >
-              <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-              See All 122 Google Reviews
+              <MessageSquare className="w-5 h-5 text-cyan-400" />
+              See All Google Reviews
               <ChevronRight className="w-5 h-5" />
             </a>
           </motion.div>
@@ -624,23 +642,27 @@ export default function Home() {
               <p className="text-slate-400">(734) 975-1111</p>
             </motion.a>
 
-            <motion.div
+            <motion.a
+              href="https://maps.google.com/?q=3897+Platt+Rd+Ann+Arbor+MI+48108"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="flex flex-col items-center p-8 rounded-2xl bg-slate-900/50 border border-white/5"
+              className="flex flex-col items-center p-8 rounded-2xl bg-slate-900/50 border border-cyan-500/30 hover:border-cyan-500/60 transition-colors group"
             >
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 to-fuchsia-600 flex items-center justify-center mb-4">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <MapPin className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-bold mb-2">Visit Us</h3>
-              <p className="text-slate-400 text-center">
+              <h3 className="text-lg font-bold mb-2 text-cyan-400">Visit Us</h3>
+              <p className="text-white text-center font-semibold">
                 3897 Platt Rd
                 <br />
                 Ann Arbor, MI 48108
               </p>
-            </motion.div>
+              <p className="text-cyan-400 text-sm mt-2">Get Directions →</p>
+            </motion.a>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -680,7 +702,7 @@ export default function Home() {
                 Call Now — Free Quote!
               </a>
               <a
-                href="sms:+17349751111"
+                href="sms:+17346868500"
                 className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-white/10 border border-white/20 text-xl font-bold hover:bg-white/20 transition-colors"
               >
                 <MessageSquare className="w-6 h-6" />
