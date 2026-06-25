@@ -33,7 +33,7 @@ const services = [
     description:
       "Premium speakers, subwoofers, amplifiers, and full sound system upgrades tailored to your ride.",
     color: "from-cyan-400 to-blue-600",
-    image: "/images/unnamed.webp",
+    image: "/images/car-audio-subwoofers.webp",
   },
   {
     icon: Sun,
@@ -195,7 +195,7 @@ export default function Home() {
               <img
                 src="/logo.svg"
                 alt="Hollywood Sound Logo"
-                className="h-16 w-auto"
+                className="h-16 w-auto bg-transparent"
               />
             </a>
 
@@ -305,16 +305,16 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-950/90 border border-cyan-500/40 text-sm text-white font-bold mb-6 backdrop-blur-md shadow-lg shadow-cyan-500/20"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-950/90 border border-cyan-500/40 text-base text-white font-bold mb-6 backdrop-blur-md shadow-lg shadow-cyan-500/20"
             >
-              <Navigation className="w-4 h-4 text-cyan-400" />
+              <Navigation className="w-5 h-5 text-cyan-400" />
               3897 Platt Rd, Ann Arbor, MI 48108
             </motion.div>
 
             <img
               src="/logo.svg"
               alt="Hollywood Sound - Ann Arbor's Premier Car Audio Shop"
-              className="h-48 md:h-60 lg:h-72 w-auto mx-auto mb-6 drop-shadow-2xl"
+              className="h-48 md:h-60 lg:h-72 w-auto mx-auto mb-6 drop-shadow-2xl bg-transparent"
             />
             <h1 className="sr-only">
               Hollywood Sound — Car Audio, Tinting & Customization in Ann Arbor, MI
@@ -721,7 +721,7 @@ export default function Home() {
               <img
                 src="/logo.svg"
                 alt="Hollywood Sound"
-                className="h-12 w-auto"
+                className="h-12 w-auto bg-transparent"
               />
             </div>
 
