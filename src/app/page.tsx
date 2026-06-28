@@ -88,7 +88,7 @@ const galleryImages = [
 
 const features = [
   { text: "20+ Years of Experience", icon: CheckCircle },
-  { text: "Lifetime Warranty on Labor", icon: CheckCircle },
+  { text: "1-Year Warranty on Labor", icon: CheckCircle },
   { text: "Certified Installers", icon: CheckCircle },
   { text: "Same-Day Service Available", icon: CheckCircle },
   { text: "Top Brands & Budget Options", icon: CheckCircle },
