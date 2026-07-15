@@ -90,6 +90,7 @@ const galleryImages = [
   { src: "/images/unnamed (9).webp", alt: "White Ford Mustang custom audio and lighting" },
   { src: "/images/bike.png", alt: "Custom motorcycle audio installation at Hollywood Sound" },
   { src: "/images/remote-start-new.jpeg", alt: "Remote starter installation at Hollywood Sound" },
+  { src: "/images/car-audio-2.png", alt: "Car audio system installation at Hollywood Sound" },
 ];
 
 const features = [
@@ -125,7 +126,7 @@ const brands = [
   "JVC", "Kicker", "Pioneer", "JL Audio",
   "Rockford Fosgate", "Sony", "Kenwood", "Alpine",
   "JBL", "BOSS", "Ex Calibur", "Time Stopper",
-  "Compustar", "Viper", "Diode Dynamics",
+  "Compustar", "Viper", "Diode Dynamics", "CrimeStopper Remote Starter",
 ];
 
 /* ─────────────── COMPONENTS ─────────────── */
@@ -383,7 +384,22 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="group relative rounded-2xl bg-slate-900/50 border border-white/5 hover:border-white/10 transition-all hover:-translate-y-1 overflow-hidden"
               >
-                {/* Service image */}
+                {/* Service header */}
+                <div className="p-5 pb-3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div
+                      className={`w-10 h-10 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg flex-shrink-0`}
+                    >
+                      <service.icon className="w-5 h-5 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold">{service.title}</h3>
+                  </div>
+                  <p className="text-slate-400 leading-relaxed text-sm">
+                    {service.description}
+                  </p>
+                </div>
+
+                {/* Service images */}
                 <div className="relative overflow-hidden bg-slate-800">
                   <div className="aspect-[16/10]">
                     <img
@@ -413,19 +429,6 @@ export default function Home() {
                       />
                     </div>
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />
-                  <div
-                    className={`absolute top-4 left-4 w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}
-                  >
-                    <service.icon className="w-6 h-6 text-white" />
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                  <p className="text-slate-400 leading-relaxed text-sm">
-                    {service.description}
-                  </p>
                 </div>
               </motion.div>
             ))}
@@ -449,7 +452,7 @@ export default function Home() {
             <div className="hidden md:block w-px h-6 bg-white/20" />
             <div className="flex items-center gap-2 text-slate-300">
               <Clock className="w-4 h-4 text-amber-400" />
-              Mon 10-6, Tue-Fri 9-6, Sat 9-5
+              Mon–Sat: 10AM – 5PM
             </div>
           </motion.div>
         </div>
@@ -703,11 +706,7 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-bold mb-2">Hours</h3>
               <p className="text-slate-400 text-center">
-                Mon: 10AM – 6PM
-                <br />
-                Tue-Fri: 9AM – 6PM
-                <br />
-                Sat: 9AM – 5PM
+                Mon–Sat: 10AM – 5PM
                 <br />
                 Sun: Closed
               </p>
