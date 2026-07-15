@@ -366,7 +366,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-black mb-4">
-              Our <span className="text-cyan-400">Services</span>
+              Our <span className="text-cyan-400">Services</span> ⚡
             </h2>
             <p className="text-slate-400 text-lg max-w-xl mx-auto">
               Everything your ride needs to stand out and sound incredible.
