@@ -44,7 +44,6 @@ const services = [
     color: "from-purple-400 to-fuchsia-600",
     image: "/images/unnamed (7).webp",
     extraImage: "/images/unnamed1.webp",
-    detailImage: "/images/tint-details.png",
   },
   {
     icon: Lightbulb,
@@ -374,7 +373,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
             {services.map((service, i) => (
               <motion.div
                 key={service.title}
@@ -382,10 +381,10 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group relative rounded-2xl bg-slate-900/50 border border-white/5 hover:border-white/10 transition-all hover:-translate-y-1 overflow-hidden"
+                className="group relative rounded-2xl bg-slate-900/50 border border-white/5 hover:border-white/10 transition-all hover:-translate-y-1 overflow-hidden flex flex-col"
               >
                 {/* Service header */}
-                <div className="p-5 pb-3">
+                <div className="p-5 pb-3 flex-shrink-0">
                   <div className="flex items-center gap-3 mb-2">
                     <div
                       className={`w-10 h-10 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg flex-shrink-0`}
@@ -399,36 +398,37 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* Service images */}
-                <div className="relative overflow-hidden bg-slate-800">
-                  <div className="aspect-[16/10]">
-                    <img
-                      src={service.image}
-                      alt={`${service.title} service at Hollywood Sound`}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
+                {/* Service images — single consistent image area */}
+                <div className="relative overflow-hidden bg-slate-800 flex-1 min-h-0">
+                  <div className="grid grid-cols-2 h-full">
+                    <div className="relative h-full">
+                      <img
+                        src={service.image}
+                        alt={`${service.title} service at Hollywood Sound`}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    {(service as any).extraImage ? (
+                      <div className="relative h-full border-l border-white/10">
+                        <img
+                          src={(service as any).extraImage}
+                          alt={`${service.title} additional work at Hollywood Sound`}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : (
+                      <div className="relative h-full border-l border-white/10">
+                        <img
+                          src={service.image}
+                          alt={`${service.title} service at Hollywood Sound`}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
                   </div>
-                  {(service as any).extraImage && (
-                    <div className="aspect-[16/10] border-t border-white/10">
-                      <img
-                        src={(service as any).extraImage}
-                        alt={`${service.title} additional work at Hollywood Sound`}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  )}
-                  {(service as any).detailImage && (
-                    <div className="aspect-[16/10] border-t border-white/10">
-                      <img
-                        src={(service as any).detailImage}
-                        alt={`${service.title} detail work at Hollywood Sound`}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  )}
                 </div>
               </motion.div>
             ))}
