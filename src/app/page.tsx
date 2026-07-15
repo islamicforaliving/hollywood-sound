@@ -44,7 +44,6 @@ const services = [
     color: "from-purple-400 to-fuchsia-600",
     image: "/images/unnamed (7).webp",
     extraImage: "/images/unnamed1.webp",
-    detailImage: "/images/tint-details.png",
   },
   {
     icon: Lightbulb,
@@ -375,67 +374,86 @@ export default function Home() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, i) => {
-              const extraImages = [
-                (service as any).extraImage,
-                (service as any).detailImage,
-              ].filter(Boolean);
-              return (
-                <motion.div
-                  key={service.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="group relative rounded-2xl bg-slate-900/50 border border-white/5 hover:border-white/10 transition-all hover:-translate-y-1 overflow-hidden"
-                >
-                  {/* Main featured image with text overlay */}
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={`${service.title} service at Hollywood Sound`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+            {services.map((service, i) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group relative rounded-2xl bg-slate-900/50 border border-white/5 hover:border-white/10 transition-all hover:-translate-y-1 overflow-hidden"
+              >
+                {/* Main featured image with text overlay */}
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={`${service.title} service at Hollywood Sound`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
 
-                    {/* Icon badge */}
-                    <div
-                      className={`absolute top-4 left-4 w-11 h-11 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}
-                    >
-                      <service.icon className="w-5 h-5 text-white" />
-                    </div>
-
-                    {/* Text overlay at bottom */}
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <h3 className="text-xl font-bold mb-1.5">{service.title}</h3>
-                      <p className="text-slate-300 text-sm leading-relaxed line-clamp-2">
-                        {service.description}
-                      </p>
-                    </div>
+                  {/* Icon badge */}
+                  <div
+                    className={`absolute top-4 left-4 w-11 h-11 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}
+                  >
+                    <service.icon className="w-5 h-5 text-white" />
                   </div>
 
-                  {/* Thumbnail strip for extra images */}
-                  {extraImages.length > 0 && (
-                    <div className="flex border-t border-white/5">
-                      {extraImages.map((img: string, idx: number) => (
-                        <div
-                          key={idx}
-                          className={`relative flex-1 aspect-[16/10] overflow-hidden ${idx > 0 ? 'border-l border-white/5' : ''}`}
-                        >
-                          <img
-                            src={img}
-                            alt={`${service.title} work at Hollywood Sound`}
-                            className="w-full h-full object-cover"
-                            loading="lazy"
-                          />
-                        </div>
-                      ))}
+                  {/* Text overlay at bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <h3 className="text-xl font-bold mb-1.5">{service.title}</h3>
+                    <p className="text-slate-300 text-sm leading-relaxed line-clamp-2">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Single extra image thumbnail */}
+                {(service as any).extraImage && (
+                  <div className="border-t border-white/5">
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <img
+                        src={(service as any).extraImage}
+                        alt={`${service.title} work at Hollywood Sound`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
                     </div>
-                  )}
-                </motion.div>
-              );
-            })}
+                  </div>
+                )}
+              </motion.div>
+            ))}
+
+            {/* Tint Details Promo Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="group relative rounded-2xl bg-gradient-to-br from-purple-900/40 to-fuchsia-900/40 border border-purple-500/20 hover:border-purple-500/40 transition-all hover:-translate-y-1 overflow-hidden"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src="/images/tint-details.png"
+                  alt="Window tinting shade options and details at Hollywood Sound"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
+
+                <div className="absolute top-4 left-4 w-11 h-11 rounded-xl bg-gradient-to-br from-purple-400 to-fuchsia-600 flex items-center justify-center shadow-lg">
+                  <Sun className="w-5 h-5 text-white" />
+                </div>
+
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <h3 className="text-xl font-bold mb-1.5">Tint Shade Guide</h3>
+                  <p className="text-slate-300 text-sm leading-relaxed">
+                    From light UV protection to full privacy limo tint — we carry ceramic and carbon films in every shade.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
