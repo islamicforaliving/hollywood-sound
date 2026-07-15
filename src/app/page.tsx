@@ -34,6 +34,7 @@ const services = [
       "Premium speakers, subwoofers, amplifiers, and full sound system upgrades tailored to your ride.",
     color: "from-cyan-400 to-blue-600",
     image: "/images/car-audio-subwoofers.webp",
+    extraImage: "/images/car-audio-new.jpeg",
   },
   {
     icon: Sun,
@@ -42,6 +43,8 @@ const services = [
       "High-quality ceramic and carbon tints for UV protection, privacy, and a sleek look. Stay cool in the summer and protect your interior from fading.",
     color: "from-purple-400 to-fuchsia-600",
     image: "/images/unnamed (7).webp",
+    extraImage: "/images/unnamed1.webp",
+    detailImage: "/images/tint-details.png",
   },
   {
     icon: Lightbulb,
@@ -58,6 +61,7 @@ const services = [
       "Start your car from anywhere. Smartphone integration, keyless entry, and security systems.",
     color: "from-emerald-400 to-green-600",
     image: "/images/remote-starter-snow.jpg",
+    extraImage: "/images/remote-start-new.jpeg",
   },
   {
     icon: Disc3,
@@ -82,8 +86,10 @@ const galleryImages = [
   { src: "/images/unnamed (2).webp", alt: "Teal Chevrolet Corvette custom build at Hollywood Sound" },
   { src: "/images/unnamed (4).webp", alt: "Black McLaren supercar at Hollywood Sound Ann Arbor" },
   { src: "/images/unnamed (6).webp", alt: "Blue Chevrolet Corvette at Hollywood Sound shop" },
-  { src: "/images/unnamed (8).webp", alt: "BOSS audio amplifier professional installation" },
+  { src: "/images/audio-system.jpeg", alt: "Custom audio system installation at Hollywood Sound" },
   { src: "/images/unnamed (9).webp", alt: "White Ford Mustang custom audio and lighting" },
+  { src: "/images/bike.png", alt: "Custom motorcycle audio installation at Hollywood Sound" },
+  { src: "/images/remote-start-new.jpeg", alt: "Remote starter installation at Hollywood Sound" },
 ];
 
 const features = [
@@ -118,8 +124,8 @@ const reviews = [
 const brands = [
   "JVC", "Kicker", "Pioneer", "JL Audio",
   "Rockford Fosgate", "Sony", "Kenwood", "Alpine",
-  "JBL", "BOSS", "3M", "Llumar",
-  "Compustar", "Viper", "Oracle", "Diode Dynamics",
+  "JBL", "BOSS", "Ex Calibur", "Time Stopper",
+  "Compustar", "Viper", "Diode Dynamics",
 ];
 
 /* ─────────────── COMPONENTS ─────────────── */
@@ -378,14 +384,36 @@ export default function Home() {
                 className="group relative rounded-2xl bg-slate-900/50 border border-white/5 hover:border-white/10 transition-all hover:-translate-y-1 overflow-hidden"
               >
                 {/* Service image */}
-                <div className="relative aspect-[16/10] overflow-hidden bg-slate-800">
-                  <img
-                    src={service.image}
-                    alt={`${service.title} service at Hollywood Sound`}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+                <div className="relative overflow-hidden bg-slate-800">
+                  <div className="aspect-[16/10]">
+                    <img
+                      src={service.image}
+                      alt={`${service.title} service at Hollywood Sound`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  {(service as any).extraImage && (
+                    <div className="aspect-[16/10] border-t border-white/10">
+                      <img
+                        src={(service as any).extraImage}
+                        alt={`${service.title} additional work at Hollywood Sound`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  {(service as any).detailImage && (
+                    <div className="aspect-[16/10] border-t border-white/10">
+                      <img
+                        src={(service as any).detailImage}
+                        alt={`${service.title} detail work at Hollywood Sound`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />
                   <div
                     className={`absolute top-4 left-4 w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}
                   >
