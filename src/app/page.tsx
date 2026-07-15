@@ -44,6 +44,7 @@ const services = [
     color: "from-purple-400 to-fuchsia-600",
     image: "/images/unnamed (7).webp",
     extraImage: "/images/unnamed1.webp",
+    detailImage: "/images/tint-details.png",
   },
   {
     icon: Lightbulb,
@@ -373,65 +374,68 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-            {services.map((service, i) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group relative rounded-2xl bg-slate-900/50 border border-white/5 hover:border-white/10 transition-all hover:-translate-y-1 overflow-hidden flex flex-col"
-              >
-                {/* Service header */}
-                <div className="p-5 pb-3 flex-shrink-0">
-                  <div className="flex items-center gap-3 mb-2">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, i) => {
+              const extraImages = [
+                (service as any).extraImage,
+                (service as any).detailImage,
+              ].filter(Boolean);
+              return (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="group relative rounded-2xl bg-slate-900/50 border border-white/5 hover:border-white/10 transition-all hover:-translate-y-1 overflow-hidden"
+                >
+                  {/* Main featured image with text overlay */}
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={`${service.title} service at Hollywood Sound`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+
+                    {/* Icon badge */}
                     <div
-                      className={`w-10 h-10 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg flex-shrink-0`}
+                      className={`absolute top-4 left-4 w-11 h-11 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg`}
                     >
                       <service.icon className="w-5 h-5 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold">{service.title}</h3>
-                  </div>
-                  <p className="text-slate-400 leading-relaxed text-sm">
-                    {service.description}
-                  </p>
-                </div>
 
-                {/* Service images — single consistent image area */}
-                <div className="relative overflow-hidden bg-slate-800 flex-1 min-h-0">
-                  <div className="grid grid-cols-2 h-full">
-                    <div className="relative h-full">
-                      <img
-                        src={service.image}
-                        alt={`${service.title} service at Hollywood Sound`}
-                        className="absolute inset-0 w-full h-full object-cover"
-                        loading="lazy"
-                      />
+                    {/* Text overlay at bottom */}
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <h3 className="text-xl font-bold mb-1.5">{service.title}</h3>
+                      <p className="text-slate-300 text-sm leading-relaxed line-clamp-2">
+                        {service.description}
+                      </p>
                     </div>
-                    {(service as any).extraImage ? (
-                      <div className="relative h-full border-l border-white/10">
-                        <img
-                          src={(service as any).extraImage}
-                          alt={`${service.title} additional work at Hollywood Sound`}
-                          className="absolute inset-0 w-full h-full object-cover"
-                          loading="lazy"
-                        />
-                      </div>
-                    ) : (
-                      <div className="relative h-full border-l border-white/10">
-                        <img
-                          src={service.image}
-                          alt={`${service.title} service at Hollywood Sound`}
-                          className="absolute inset-0 w-full h-full object-cover"
-                          loading="lazy"
-                        />
-                      </div>
-                    )}
                   </div>
-                </div>
-              </motion.div>
-            ))}
+
+                  {/* Thumbnail strip for extra images */}
+                  {extraImages.length > 0 && (
+                    <div className="flex border-t border-white/5">
+                      {extraImages.map((img: string, idx: number) => (
+                        <div
+                          key={idx}
+                          className={`relative flex-1 aspect-[16/10] overflow-hidden ${idx > 0 ? 'border-l border-white/5' : ''}`}
+                        >
+                          <img
+                            src={img}
+                            alt={`${service.title} work at Hollywood Sound`}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
