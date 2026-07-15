@@ -126,7 +126,7 @@ const brands = [
   "JVC", "Kicker", "Pioneer", "JL Audio",
   "Rockford Fosgate", "Sony", "Kenwood", "Alpine",
   "JBL", "BOSS", "Ex Calibur", "Time Stopper",
-  "Compustar", "Viper", "Diode Dynamics", "CrimeStopper Remote Starter",
+  "Compustar", "Viper", "CrimeStopper Remote Starter", "DB Drive Audio",
 ];
 
 /* ─────────────── COMPONENTS ─────────────── */
